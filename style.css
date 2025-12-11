@@ -1,0 +1,639 @@
+/* Custom Properties & Reset */
+:root {
+    --color-primary-dark: #0a0e1c; 
+    --color-secondary-dark: #204589; 
+    --color-highlight-gold: #c39d4b; 
+    --color-text-light: #ffffff;
+    --color-text-faded: #cccccc;
+    --font-family-primary: 'Poppins', sans-serif;
+    --spacing-large: 60px;
+    --spacing-medium: 30px;
+    --spacing-small: 15px;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-small);
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--spacing-large);
+    color: #f1f1f1; /* Very dark gray, close to black */
+}
+
+.section-title .highlight, .highlight {
+    color: var(--color-highlight-gold);
+}
+
+.white {
+    color: var(--color-text-light);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid var(--color-highlight-gold);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all var(--transition-speed) ease-in-out;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background-color: var(--color-highlight-gold);
+    color: var(--color-primary-dark);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--color-highlight-gold);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-highlight-gold);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-highlight-gold);
+    color: var(--color-primary-dark);
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--color-primary-dark);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-small) 0;
+}
+
+.logo h1 {
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--color-text-light);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: var(--color-text-faded);
+    padding: 10px var(--spacing-small);
+    font-weight: 600;
+    transition: color var(--transition-speed) ease-in-out;
+}
+
+.nav-list li a:hover {
+    color: var(--color-highlight-gold);
+}
+
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    background: transparent;
+    border: none;
+    color: var(--color-highlight-gold);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('images/test1.png') no-repeat center center/cover; 
+}
+
+.hero-section {
+    background: linear-gradient(180deg, #012A5A 0%, #000814 100%);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-logo {
+    width: 150px; 
+    height: auto;
+    margin-bottom: var(--spacing-small);
+    filter: drop-shadow(0 0 5px rgba(195, 157, 75, 0.8)); 
+}
+
+.hero-content .subtitle {
+    font-size: 1.2em;
+    color: var(--color-highlight-gold);
+    margin-bottom: var(--spacing-small);
+    font-weight: 600;
+}
+
+.hero-content .main-title {
+    font-size: 4em;
+    font-weight: 700;
+    margin-bottom: var(--spacing-small);
+    line-height: 1.1;
+}
+
+.hero-content .description {
+    font-size: 1.1em;
+    color: var(--color-text-faded);
+    margin-bottom: var(--spacing-large);
+}
+
+/* --- Services Section --- */
+.services-section {
+    background-color: var(--color-secondary-dark);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-medium);
+}
+
+.service-card {
+    background-color: var(--color-primary-dark);
+    padding: var(--spacing-medium);
+    border-radius: 8px;
+    text-align: center;
+    border-bottom: 3px solid var(--color-highlight-gold);
+    transition: transform var(--transition-speed) ease-in-out, box-shadow var(--transition-speed) ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.service-card .icon {
+    font-size: 3em;
+    color: var(--color-highlight-gold);
+    margin-bottom: var(--spacing-small);
+}
+
+.service-card h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--color-text-light);
+}
+
+.service-card p {
+    color: var(--color-text-faded);
+}
+
+/* --- About Section --- */
+
+
+.about-section {
+    position: relative; 
+    background-color: var(--color-primary-dark);
+    /* use the images/ folder and explicit background-image to avoid overriding the background-color accidentally */
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/guard-training7.jpeg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: scroll; 
+    padding: 100px 0; 
+}
+
+.about-section-title {
+    color: var(--color-text-light);
+    text-align: center;
+    margin-bottom: var(--spacing-large);
+}
+
+.about-section .section-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); 
+    z-index: 1;
+}
+
+.about-section .container.content-wrapper {
+    position: relative;
+    z-index: 5; 
+    max-width: 1200px; /* Expand max-width for image + text */
+}
+
+/* NEW: Grid for text content and image */
+.about-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns: text and image */
+    gap: var(--spacing-large);
+    align-items: center; /* Vertically align items in the middle */
+}
+/* About layout: spacing, image alignment, and mission/vision two-column on desktop */
+.about-text-content {
+    padding: 10px 20px;
+}
+
+/* Make mission and vision sit side-by-side on larger screens */
+.mission-vision-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-medium);
+}
+
+/* Ensure the mission/vision cards are visually balanced */
+.mission-card, .vision-card {
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Center the image column vertically and ensure predictable sizing */
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Slight margin to separate intro text from cards */
+.about-text {
+    margin-bottom: calc(var(--spacing-medium) + 10px);
+}
+
+/* Improve accessibility: readable contrast for titles over the background */
+.about-section-title h2, .about-section-title .section-title {
+    color: var(--color-text-light);
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+.about-image {
+    text-align: center; /* Center the image if it doesn't fill the column */
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    object-fit: cover; /* Ensures image fills space nicely */
+}
+
+.about-text {
+    font-size: 1.1em;
+    margin-bottom: var(--spacing-large);
+    color: var(--color-text-light); 
+    text-align: left; /* Align text left in its column */
+    text-align : justify;
+    text-justify : inter-word;
+    
+}
+
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Stack mission/vision cards within their column */
+    gap: var(--spacing-medium);
+}
+
+.mission-card, .vision-card {
+    background-color: rgba(18, 24, 45, 0.85); 
+    padding: var(--spacing-medium);
+    border-radius: 8px;
+    border-left: 5px solid var(--color-highlight-gold);
+}
+
+.mission-card h3, .vision-card h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--color-highlight-gold);
+}
+
+.mission-card p, .vision-card p {
+    color: var(--color-text-light); 
+}
+
+
+/* --- Licenses & Certifications Section --- */
+.licenses-section {
+    background-color: var(--color-primary-dark);
+}
+
+.section-subtitle {
+    font-size: 1.1em;
+    text-align: center;
+    color: var(--color-text-faded);
+    margin-bottom: var(--spacing-large);
+}
+/* OLD CERT CARD GRID
+.certification-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-medium);
+    margin-bottom: var(--spacing-medium);
+}
+*/
+
+.certification-grid {
+    display: grid;
+    /* Uses three columns for larger screens to fit the five cards better */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: var(--spacing-medium);
+    margin-bottom: var(--spacing-medium);
+    /* NEW: Center the grid itself within the container */
+    justify-content: center;
+}
+
+/* NEW: Rule to center the remaining cards when the row is not full (e.g., 5 cards total) */
+/* This targets the 4th and 5th items when the grid has 3 columns */
+.certification-grid .cert-card:nth-child(4), 
+.certification-grid .cert-card:nth-child(5) {
+    align-self: center;
+    justify-self: center;
+    /* If the grid has 3 columns, the 4th card starts the second row. 
+       We center the 4th and 5th items by starting the 4th item further to the right. */
+    /* Only apply this rule if the screen is wide enough to support 3 columns */
+    /* This will be handled by the media query below to ensure it only applies on desktop */
+}
+.cert-card {
+    background-color: var(--color-secondary-dark);
+    padding: var(--spacing-medium);
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(195, 157, 75, 0.2);
+    transition: all var(--transition-speed) ease-in-out;
+}
+
+.cert-card:hover {
+    background-color: rgba(195, 157, 75, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cert-logo {
+    width: 100%; 
+    height: auto; 
+    max-height: 200px; 
+    object-fit: contain; 
+    margin-bottom: 15px;
+    border: 1px solid var(--color-text-faded); 
+}
+
+.cert-card h3 {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--color-highlight-gold);
+}
+
+.cert-card p {
+    font-size: 0.9em;
+    color: var(--color-text-faded);
+}
+
+.compliance-note {
+    text-align: center;
+    margin-top: var(--spacing-medium);
+    padding-top: var(--spacing-small);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.compliance-note p {
+    font-style: italic;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    background-color: var(--color-secondary-dark);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; 
+    gap: var(--spacing-large);
+}
+
+.contact-info h3 {
+    color: var(--color-highlight-gold);
+    font-size: 1.8em;
+    margin-bottom: var(--spacing-medium);
+}
+
+.contact-info p {
+    color: var(--color-text-faded);
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.contact-info i {
+    color: var(--color-highlight-gold);
+    width: 25px;
+    margin-right: 5px;
+}
+
+.map-container {
+    background-color: var(--color-primary-dark); 
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.map-container h3 {
+    color: var(--color-highlight-gold);
+    font-size: 1.8em;
+    margin-bottom: var(--spacing-medium);
+    text-align: center;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 400px; 
+    border: 0;
+    border-radius: 5px; 
+}
+
+footer p {
+	text-align : center;
+}
+
+/* ================================================= */
+/* --- RESPONSIVENESS (Media Queries) --- */
+/* ================================================= */
+
+/* Tablet (max-width: 992px) */
+
+@media (max-width: 992px) {
+    .nav-list {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-content nav {
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        width: 100%;
+        background-color: var(--color-primary-dark);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        z-index: 999;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+    }
+
+    .nav-content nav.active {
+        max-height: 1000px; /* 300px max height when expanded */
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .nav-list li a {
+        padding: 15px 20px;
+        display: block;
+        border-bottom: 1px solid rgb(255, 255, 255);
+    }
+
+    .hero-logo {
+        width: 120px; 
+    }
+    
+    .hero-content .main-title {
+        font-size: 3em;
+    }
+
+    .about-content-grid {
+        grid-template-columns: 1fr; /* Stack text and image vertically on smaller screens */
+        gap: var(--spacing-medium);
+    }
+
+    .about-image img {
+        margin-top: var(--spacing-medium); /* Add space above image when stacked */
+    }
+
+    .mission-vision-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .map-container iframe {
+        height: 300px; 
+    }
+
+    /* Force 2 columns on tablet/mid-size screens */
+    .certification-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        justify-content: center;
+    }
+    
+    /* Center the 5th card when there are only 2 columns on a tablet */
+    /* The 5th card will be the first item of the third row */
+    .certification-grid .cert-card:nth-child(5) {
+        /* Start at column 1, span 2 columns to center it */
+        grid-column: 1 / 3; 
+        max-width: 400px; /* Optional: limit the width so it doesn't span the full screen */
+        margin: 0 auto; /* Center the card horizontally */
+    }
+}
+
+/* Mobile (max-width: 576px) */
+@media (max-width: 576px) {
+    .hero-section {
+        height: 80vh;
+    }
+
+    .hero-logo {
+        width: 100px; 
+    }
+
+    .hero-content .main-title {
+        font-size: 2.5em;
+    }
+    
+    .section-title {
+        font-size: 2em;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info, .map-container { 
+        text-align: center;
+    }
+    
+    .map-container iframe {
+        height: 250px; 
+    }
+
+    /* Force 1 column on mobile */
+    .certification-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Reset the special centering rule for mobile */
+    .certification-grid .cert-card:nth-child(5) {
+        grid-column: auto;
+        max-width: none;
+        margin: 0;
+    }
+}
